@@ -13,7 +13,8 @@
     function App() {
         const [counter, setCounter] = React.useState(0);
         const onClick = () => {
-            setCounter(counter + 1);
+            // setCounter(counter + 1);  <- 다른 곳에서 state가 변경될 수도 있기 때문에 원하는 값이 아닐 수 있음
+            setCounter((current) => current + 1)  // 함수를 이용하는 편이 더 안전함
         }
         return (
             <div>
